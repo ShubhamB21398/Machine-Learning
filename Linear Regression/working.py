@@ -24,3 +24,11 @@ def mse(y_true,y_predicted):
     return np.mean((y_true-y_predicted)**2)
 
 print(mse(y_test , predicted))
+
+from sklearn.linear_model import LinearRegression
+
+regressor_py = LinearRegression()
+regressor_py.fit(X_train,y_train)
+predicted_py = regressor_py.predict(X_test)
+
+print(mse(y_test,predicted_py))
