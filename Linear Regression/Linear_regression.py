@@ -14,7 +14,9 @@ class linear_regression:
         self.n_iters = n_iters
         self.weights = None
         self.bias = None
-        
+    
+    #Training the model    
+    #finding values of parameters
     def fit(self, X, y):
         n_samples, n_features = X.shape
         
@@ -35,7 +37,7 @@ class linear_regression:
             self.weights = self.weights - self.lr*dw
             self.bias = self.bias - self.lr*db
         
-    
+    # predicting using the parameters found
     def predict(self, X):
         y_approx = np.dot(X,self.weights)+self.bias
         return y_approx
